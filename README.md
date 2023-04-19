@@ -1,10 +1,8 @@
 ## Daily Diet API
 
-
-
 ###### RF's (Requisitios Funcionais)
 
-* [ ] Deve ser possível criar um usuário.
+* [X] Deve ser possível criar um usuário.
 * [ ] Deve ser possível identificar o usuário entre as requisições.
 * [ ] Deve ser possível registrar uma refeição feita.
 * [ ] Deve ser possível editar uma refeição.
@@ -15,13 +13,13 @@
 
 ###### RN's (Regras de negócio)
 
-* [ ] O usuário não deve poder se cadastrar com um e-mail duplicado.
+* [X] O usuário não deve poder se cadastrar com um e-mail duplicado.
 * [ ] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou.
 * [ ] As refeições devem ser relacionadas a um usuário.
 
 ###### RNF's (Requisitos não-funcionais)
 
-* [ ] A senha do usuário precisa estar criptografada.
-* [ ] Os dados da aplicação precisam estar persistidos em um banco SQLite.
+* [X] A senha do usuário precisa estar criptografada.
+* [X] Os dados da aplicação precisam estar persistidos em um banco SQLite.
 * [ ] Todas listas de dados precisam estar paginadas com 20 itens por página.
 * [ ] O usuário deve ser identificado por um JWT(JSON Web Token).
