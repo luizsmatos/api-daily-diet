@@ -8,8 +8,8 @@
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "lint": "eslint src --ext .ts",
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
   },
