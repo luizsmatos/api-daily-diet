@@ -27,6 +27,7 @@
         "arrowParens": "always",
         "semi": false
       }
-    ]
+    ],
+    "@typescript-eslint/method-signature-style": "off"
   }
 }
