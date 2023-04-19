@@ -28,6 +28,7 @@
         "semi": false
       }
     ],
-    "@typescript-eslint/method-signature-style": "off"
+    "@typescript-eslint/method-signature-style": "off",
+    "@typescript-eslint/consistent-type-imports": "off"
   }
 }
