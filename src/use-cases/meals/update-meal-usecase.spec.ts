@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { InMemoryMealsRepository } from '@/repositories/meals/in-memory/in-memory-meals-repository'
 
 import { UpdateMealUseCase } from './update-meal-usecase'
+import { MealNotFoundError } from './errors/meal-not-found-error'
 
 let mealsRepository: InMemoryMealsRepository
 let sut: UpdateMealUseCase
@@ -36,5 +37,20 @@ describe('Update Meal UseCase', () => {
 
     expect(meal.name).toEqual('TypeScript Meal')
     expect(mealsRepository.items[0].name).toEqual('TypeScript Meal')
+  })
+
+  it("should not be able to update a meal if it doesn't exist", async () => {
+    await expect(
+      sut.execute({
+        mealId: 'meal-not-exists',
+        data: {
+          name: 'TypeScript Meal',
+          description: 'A simple JavaScript meal',
+          date: '2020-01-01',
+          time: '12:00',
+          isInDiet: true,
+        },
+      }),
+    ).rejects.toBeInstanceOf(MealNotFoundError)
   })
 })
