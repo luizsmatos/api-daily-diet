@@ -42,4 +42,12 @@ export class InMemoryMealsRepository implements MealsRepository {
 
     return meal
   }
+
+  async delete(mealId: string): Promise<void> {
+    const mealIndex = this.items.findIndex((item) => item.id === mealId)
+
+    if (mealIndex >= 0) {
+      this.items.splice(mealIndex, 1)
+    }
+  }
 }
