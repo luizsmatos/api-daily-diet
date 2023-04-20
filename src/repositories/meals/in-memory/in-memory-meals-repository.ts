@@ -32,4 +32,14 @@ export class InMemoryMealsRepository implements MealsRepository {
 
     return meal
   }
+
+  async save(meal: Meal): Promise<Meal> {
+    const mealIndex = this.items.findIndex((item) => item.id === meal.id)
+
+    if (mealIndex >= 0) {
+      this.items[mealIndex] = meal
+    }
+
+    return meal
+  }
 }
