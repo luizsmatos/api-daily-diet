@@ -6,6 +6,12 @@ import { MealsRepository } from '../meals-repository'
 export class InMemoryMealsRepository implements MealsRepository {
   public items: Meal[] = []
 
+  async findManyByUserId(id: string): Promise<Meal[]> {
+    const meals = this.items.filter((item) => item.user_id === id)
+
+    return meals
+  }
+
   async findById(mealId: string): Promise<Meal | null> {
     const meal = this.items.find((item) => item.id === mealId)
 
