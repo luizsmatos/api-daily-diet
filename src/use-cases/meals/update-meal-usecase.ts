@@ -1,8 +1,10 @@
 import { MealsRepository } from '@/repositories/meals/meals-repository'
 import { Meal } from '@prisma/client'
 import { MealNotFoundError } from './errors/meal-not-found-error'
+import { NotAllowedError } from './errors/not-allowed-error'
 
 interface UpdateMealUseCaseRequest {
+  userId: string
   mealId: string
   data: {
     name: string
@@ -21,6 +23,7 @@ export class UpdateMealUseCase {
   constructor(private readonly mealsRepository: MealsRepository) {}
 
   async execute({
+    userId,
     mealId,
     data,
   }: UpdateMealUseCaseRequest): Promise<UpdateMealUseCaseResponse> {
@@ -28,6 +31,10 @@ export class UpdateMealUseCase {
 
     if (!meal) {
       throw new MealNotFoundError()
+    }
+
+    if (meal.user_id !== userId) {
+      throw new NotAllowedError()
     }
 
     meal.name = data.name
