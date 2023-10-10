@@ -30,6 +30,7 @@
     ],
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/consistent-type-imports": "off",
-    "@typescript-eslint/strict-boolean-expressions": "off"
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off"
   }
 }
