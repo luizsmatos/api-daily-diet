@@ -26,8 +26,7 @@ model Meal {
   id          String   @id @default(uuid())
   name        String
   description String
-  date        String
-  time        String
+  date        DateTime
   is_in_diet  Boolean
   created_at  DateTime @default(now())
 
