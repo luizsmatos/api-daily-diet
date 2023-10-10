@@ -4,6 +4,7 @@ import { InMemoryMealsRepository } from '@/repositories/meals/in-memory/in-memor
 
 import { GetMealUseCase } from './get-meal-usecase'
 import { MealNotFoundError } from './errors/meal-not-found-error'
+import { makeMeal } from 'test/factories/make-meal'
 
 let mealsRepository: InMemoryMealsRepository
 let sut: GetMealUseCase
@@ -15,17 +16,12 @@ describe('Get Meal UseCase', () => {
   })
 
   it('should be able to get a meal', async () => {
-    const createdMeal = await mealsRepository.create({
-      user_id: 'user-01',
-      name: 'JavaScript Meal',
-      description: 'A simple JavaScript meal',
-      date: '2020-01-01',
-      time: '12:00',
-      is_in_diet: true,
-    })
+    const newMeal = makeMeal()
+
+    mealsRepository.items.push(newMeal)
 
     const { meal } = await sut.execute({
-      mealId: createdMeal.id,
+      mealId: newMeal.id,
     })
 
     expect(meal.id).toEqual(expect.any(String))

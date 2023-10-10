@@ -39,8 +39,7 @@ export class UpdateMealUseCase {
 
     meal.name = data.name
     meal.description = data.description
-    meal.date = data.date
-    meal.time = data.time
+    meal.date = new Date(data.date)
     meal.is_in_diet = data.isInDiet
 
     await this.mealsRepository.save(meal)

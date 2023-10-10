@@ -18,8 +18,7 @@ describe('Create Meal UseCase', () => {
       userId: 'user-01',
       name: 'JavaScript Meal',
       description: 'A simple JavaScript meal',
-      date: '2020-01-01',
-      time: '12:00',
+      date: new Date().toString(),
       isInDiet: true,
     })
 

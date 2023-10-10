@@ -6,7 +6,6 @@ interface CreateMealUseCaseRequest {
   name: string
   description: string
   date: string
-  time: string
   isInDiet: boolean
 }
 
@@ -22,7 +21,6 @@ export class CreateMealUseCase {
     name,
     description,
     date,
-    time,
     isInDiet,
   }: CreateMealUseCaseRequest): Promise<CreateMealUseCaseResponse> {
     const meal = await this.mealsRepository.create({
@@ -30,7 +28,6 @@ export class CreateMealUseCase {
       name,
       description,
       date,
-      time,
       is_in_diet: isInDiet,
     })
 
