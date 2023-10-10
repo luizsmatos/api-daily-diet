@@ -23,12 +23,16 @@ export class PrismaMealsRepository implements MealsRepository {
     return meal
   }
 
-  async create(data: Prisma.MealUncheckedCreateInput): Promise<void> {
-    await prisma.meal.create({ data })
+  async create(data: Prisma.MealUncheckedCreateInput): Promise<Meal> {
+    const meal = await prisma.meal.create({ data })
+
+    return meal
   }
 
-  async save(data: Meal): Promise<void> {
-    await prisma.meal.update({ where: { id: data.id }, data })
+  async save(data: Meal): Promise<Meal> {
+    const meal = await prisma.meal.update({ where: { id: data.id }, data })
+
+    return meal
   }
 
   async delete(mealId: string): Promise<void> {
