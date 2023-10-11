@@ -2,7 +2,7 @@ import { PrismaMealsRepository } from '@/repositories/meals/prisma/prisma-meals-
 
 import { DeleteMealUseCase } from '../delete-meal-usecase'
 
-export function makeDeleteMealUserUseCase() {
+export function makeDeleteMealUseCase() {
   const mealsRepository = new PrismaMealsRepository()
   const useCase = new DeleteMealUseCase(mealsRepository)
 

@@ -2,7 +2,7 @@ import { PrismaMealsRepository } from '@/repositories/meals/prisma/prisma-meals-
 
 import { ListMealsUseCase } from '../list-meals-usecase'
 
-export function makeListMealsUserUseCase() {
+export function makeListMealsUseCase() {
   const mealsRepository = new PrismaMealsRepository()
   const useCase = new ListMealsUseCase(mealsRepository)
 
