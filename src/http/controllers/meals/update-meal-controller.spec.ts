@@ -5,7 +5,7 @@ import { makeMeal } from 'test/factories/make-meal'
 import { app } from '@/app'
 import { prisma } from '@/lib/prisma'
 
-describe('Update Meal User Controller (e2e)', () => {
+describe('Update Meal Controller (e2e)', () => {
   beforeEach(async () => {
     await app.ready()
   })

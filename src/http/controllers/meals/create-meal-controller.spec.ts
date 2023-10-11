@@ -3,7 +3,7 @@ import { beforeEach, afterEach, describe, expect, it } from 'vitest'
 import { createAndAuthenticateUser } from 'test/utils/create-and-authenticate-user'
 import { app } from '@/app'
 
-describe('Create Meal User Controller (e2e)', () => {
+describe('Create Meal Controller (e2e)', () => {
   beforeEach(async () => {
     await app.ready()
   })

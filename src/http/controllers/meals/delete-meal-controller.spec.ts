@@ -5,7 +5,7 @@ import { makeMeal } from 'test/factories/make-meal'
 import { app } from '@/app'
 import { prisma } from '@/lib/prisma'
 
-describe('Delete Meal User Controller (e2e)', () => {
+describe('Delete Meal Controller (e2e)', () => {
   beforeEach(async () => {
     await app.ready()
   })
