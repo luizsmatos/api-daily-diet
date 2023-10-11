@@ -1,10 +1,14 @@
 import request from 'supertest'
 import { app } from '@/app'
-import { beforeAll, describe, expect, it } from 'vitest'
+import { beforeEach, afterEach, describe, expect, it } from 'vitest'
 
-describe('Register User Controller', () => {
-  beforeAll(async () => {
+describe('Register User Controller (e2e)', () => {
+  beforeEach(async () => {
     await app.ready()
+  })
+
+  afterEach(async () => {
+    await app.close()
   })
 
   it('should be able to register', async () => {
