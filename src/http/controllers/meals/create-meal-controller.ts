@@ -6,8 +6,6 @@ export async function createMealController(
   request: FastifyRequest,
   reply: FastifyReply,
 ): Promise<void> {
-  request.jwtVerify()
-
   const createBodySchema = z.object({
     name: z.string(),
     description: z.string(),
